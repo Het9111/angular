@@ -1,0 +1,52 @@
+.loginForm {
+  width: 30%;
+  height: fit-content;
+  margin: auto;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 400px;
+  margin-top: 10vh;
+}
+.loginForm img {
+  height: 7vh;
+  margin: auto;
+}
+.loginForm h1 {
+  height: 4vh;
+  text-align: center;
+  margin: 20px 0px;
+}
+.alert {
+  color: red;
+}
+mat-form-field {
+  padding: 0;
+  margin: 0;
+}
+form {
+  width: 100%;
+}
+mat-form-field,
+mat-label,
+input {
+  width: 100%;
+}
+.mat-icon {
+  background: transparent;
+  border: none;
+}
+.submit-btn {
+  width: 100%;
+  background-color: #5b0aac;
+  height: 6vh;
+  color: white;
+  font-size: large;
+}
+
+.forget-password {
+  padding: 10px 0px;
+  display: flex;
+  flex-flow: row-reverse;
+}

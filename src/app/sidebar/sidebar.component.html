@@ -1,0 +1,79 @@
+<div [class]="{ logo: isOpen, logoSmall: !isOpen }">
+  <img src="/assets/NDlogo.svg" alt="ND Logo" />
+</div>
+<mat-drawer-container
+  *ngIf="isOpen; else shortList"
+  [class]="{ sideNavBar: isOpen, shrinkNavBar: !isOpen }"
+  autosize
+>
+  <mat-drawer
+    #drawer
+    class="example-sidenav collapse-menu custom-sidebar"
+    mode="side"
+    [opened]="isOpen"
+  >
+    <div class="sidebar-item" routerLink="/dashboard" routerLinkActive="active">
+      <mat-icon class="sidebar-person-icon">dashboard</mat-icon>
+      <div class="sidebar-item-text">Dashboard</div>
+    </div>
+    <div class="sidebar-item" routerLink="/category" routerLinkActive="active">
+      <mat-icon class="sidebar-person-icon">person</mat-icon>
+      <div class="sidebar-item-text">Category</div>
+    </div>
+    <div
+      class="sidebar-item"
+      routerLink="/auth/signin"
+      routerLinkActive="active"
+    >
+      <mat-icon class="sidebar-person-icon">person</mat-icon>
+      <div class="sidebar-item-text">Sub Category</div>
+    </div>
+
+    <div (click)="expandList()" class="sidebar-item">
+      <mat-icon class="sidebar-person-icon">person</mat-icon>
+      <div class="sidebar-item-text">City Management</div>
+      <mat-icon class="sidebar-person-icon">{{
+        openList ? 'keyboard_arrow_up' : 'keyboard_arrow_down'
+      }}</mat-icon>
+    </div>
+    <div *ngIf="openList">
+      <div
+        class="sidebar-sub-item"
+        routerLink="/dashboard"
+        routerLinkActive="active"
+      >
+        <mat-icon class="sidebar-person-icon">person</mat-icon>
+        <div class="sidebar-item-text">City</div>
+      </div>
+      <div
+        class="sidebar-sub-item"
+        routerLink="/dashboard"
+        routerLinkActive="active"
+      >
+        <mat-icon class="sidebar-person-icon">person</mat-icon>
+        <div class="sidebar-item-text">City Area</div>
+      </div>
+    </div>
+  </mat-drawer>
+</mat-drawer-container>
+<ng-template #shortList>
+  <div class="shrinkNavBar">
+    <div
+      class="shrink-sidebar-item"
+      routerLink="/dashboard"
+      routerLinkActive="active"
+    >
+      <mat-icon class="shrink-person-icon">dashboard</mat-icon>
+    </div>
+    <div
+      class="shrink-sidebar-item"
+      routerLink="/category"
+      routerLinkActive="active"
+    >
+      <mat-icon class="shrink-person-icon">person</mat-icon>
+    </div>
+  </div>
+</ng-template>
+<div [class]="{ toggleButton: isOpen, smallToggleButton: !isOpen }">
+  <mat-icon (click)="toggleMenu()">home</mat-icon>
+</div>

@@ -1,0 +1,55 @@
+<div class="loginForm">
+  <img src="assets/NDlogo.svg" alt="" />
+  <h1>Login</h1>
+
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" id="email" formControlName="email" />
+    </mat-form-field>
+    <div
+      class="alert alert-danger"
+      *ngIf="email?.errors && (email?.touched || email?.dirty)"
+    >
+      <div *ngIf="email?.hasError('required')">Email is required</div>
+      <div *ngIf="email?.hasError('email')">Give proper email</div>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        formControlName="password"
+      />
+      <span matSuffix>
+        <mat-icon class="may-icon" (click)="clickEvent()">{{
+          hide ? 'visibility_off' : 'visibility'
+        }}</mat-icon>
+      </span>
+    </mat-form-field>
+    <div
+      class="alert alert-danger"
+      *ngIf="password?.invalid && (password?.touched || password?.dirty)"
+    >
+      <div *ngIf="password?.hasError('required')">Password is required</div>
+      <div *ngIf="password?.hasError('pattern')">
+        Invalid Password. Please match the pattern
+      </div>
+    </div>
+    <div class="forget-password">
+      <a routerLink="/auth/forgotPassword">Forgot Password?</a>
+    </div>
+    <button
+      mat-flat-button
+      type="submit"
+      class="submit-btn"
+      [disabled]="loginForm.invalid"
+    >
+      Submit
+    </button>
+    <button mat-flat-button class="submit-btn" (click)="fillData()">
+      Fill Form
+    </button>
+  </form>
+</div>

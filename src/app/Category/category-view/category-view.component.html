@@ -1,0 +1,34 @@
+<div class="view-category">
+  <div class="title-nav">
+    <p><a routerLink="/category">Category Management</a> / View</p>
+    <button mat-button routerLink="/category" class="back-button">Back</button>
+  </div>
+  <div class="category-info" *ngIf="categoryData;else noData">
+    <div class="category-details">
+      <div class="details-field">Image</div>
+      <div class="details-data">Image Here
+        <!-- <img src="" alt=""> -->
+      </div>
+    </div>
+    <div class="category-details">
+      <div class="details-field">Category Name
+      </div>
+      <div class="details-data">{{categoryData.name | capitalize}}</div>
+    </div>
+    <div class="category-details">
+      <div class="details-field">About Category</div>
+      <div class="details-data" [innerHTML]="categoryData.aboutCategory"></div>
+    </div>
+    <div class="category-details">
+      <div class="details-field">Number of Sub Category</div>
+      <div class="details-data">{{categoryData.subCategoryCount}}</div>
+    </div>
+    <div class="category-details">
+      <div class="details-field">Rating</div>
+      <div class="details-data">{{categoryData.rating}}</div>
+    </div>
+  </div>
+  <ng-template #noData>
+    <div>NO DATA FOUND</div>
+  </ng-template>
+</div>

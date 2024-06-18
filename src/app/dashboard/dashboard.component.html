@@ -1,0 +1,28 @@
+<div class="dashboard">
+  <h2>Darshboard</h2>
+  <div class="data" *ngIf="dashboardData; else loading">
+    <div class="data-card">
+      <h2>Total Users</h2>
+      <span class="number">{{ dashboardData.user }}</span>
+    </div>
+    <div class="data-card">
+      <h2>Total Vendors</h2>
+      <span class="number">{{ dashboardData.vendor }}</span>
+    </div>
+    <div class="data-card">
+      <h2>Total Completed Bookings</h2>
+      <span class="number">{{ dashboardData.completeBooking }}</span>
+    </div>
+    <div class="data-card">
+      <h2>Total Pending Bookings</h2>
+      <span class="number">{{ dashboardData.pendingBooking }}</span>
+    </div>
+    <div class="data-card">
+      <h2>Total Cancel Bookings</h2>
+      <span class="number">{{ dashboardData.cancelBooking }}</span>
+    </div>
+  </div>
+  <ng-template #loading>
+    <h2>Data not Found</h2>
+  </ng-template>
+</div>

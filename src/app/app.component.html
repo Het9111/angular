@@ -1,0 +1,15 @@
+<div class="main-frame">
+  <app-sidebar *ngIf="!isAuthRoute"></app-sidebar>
+  <div class="router-outlet">
+    <div class="user-profile" *ngIf="!isAuthRoute">
+      <div class="circle">
+        <mat-icon [matMenuTriggerFor]="menu">person</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="logout()">Log Out</button>
+          <button mat-menu-item (click)="changePassword()">Change Password</button>
+        </mat-menu>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

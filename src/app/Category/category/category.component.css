@@ -1,0 +1,53 @@
+table {
+  width: 100%;
+}
+.table-div {
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+.action-col {
+  width: 10%;
+  text-align: center;
+}
+.sub-cat-count-col {
+  width: 10%;
+  text-align: center;
+}
+.about-cat-col {
+  width: 50%;
+  padding: 5px;
+}
+.name-col {
+  text-align: center;
+  width: 10%;
+}
+.image-col {
+  text-align: center;
+  width: 10%;
+}
+.row-header {
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
+}
+.search-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2vh;
+}
+
+.search-button,
+.add-button {
+  background-color: #5b0aac;
+  color: white;
+  font-size: larger;
+}
+
+form input {
+  height: 30px;
+  font-size: larger;
+  padding-left: 10px;
+  border-radius: 10px;
+}
